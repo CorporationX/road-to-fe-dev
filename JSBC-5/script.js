@@ -1,13 +1,13 @@
-console.log("--- Задача: Потерянный контекст ---");
+п»їconsole.log("--- Р—Р°РґР°С‡Р°: РџРѕС‚РµСЂСЏРЅРЅС‹Р№ РєРѕРЅС‚РµРєСЃС‚ ---");
 
 const person = {
-    firstName: 'Алекс',
-    lastName: 'Иванов',
+    firstName: 'РђР»РµРєСЃ',
+    lastName: 'РРІР°РЅРѕРІ',
     greet: function () {
-        console.log(`Привет, меня зовут ${this.firstName} ${this.lastName}!`);
+        console.log(`РџСЂРёРІРµС‚, РјРµРЅСЏ Р·РѕРІСѓС‚ ${this.firstName} ${this.lastName}!`);
     },
     greetArrow: () => {
-        console.log(`Привет, меня зовут ${this.firstName} ${this.lastName}!`);
+        console.log(`РџСЂРёРІРµС‚, РјРµРЅСЏ Р·РѕРІСѓС‚ ${this.firstName} ${this.lastName}!`);
     }
 };
 
@@ -16,7 +16,7 @@ person.greet();
 const greetCopy = person.greet;
 greetCopy(); 
 
-const newPerson = { firstName: 'Ирина', lastName: 'Смирнова' };
+const newPerson = { firstName: 'РСЂРёРЅР°', lastName: 'РЎРјРёСЂРЅРѕРІР°' };
 
 greetCopy.call(newPerson);   
 greetCopy.apply(newPerson);  
