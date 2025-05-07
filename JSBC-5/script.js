@@ -1,27 +1,19 @@
-﻿console.log("--- Задача: Потерянный контекст ---");
-
+﻿
 const person = {
-    firstName: 'Алекс',
+    firstName: 'Миша',
     lastName: 'Иванов',
     greet: function () {
-        console.log(`Привет, меня зовут ${this.firstName} ${this.lastName}!`);
-    },
-    greetArrow: () => {
-        console.log(`Привет, меня зовут ${this.firstName} ${this.lastName}!`);
-    }
+    console.log(`Привет.`);
+  }
 };
-
-person.greet();
-
-const greetCopy = person.greet;
-greetCopy(); 
-
-const newPerson = { firstName: 'Ирина', lastName: 'Смирнова' };
-
-greetCopy.call(newPerson);   
-greetCopy.apply(newPerson);  
-
-const boundGreet = greetCopy.bind(newPerson);
-boundGreet(); 
-
-person.greetArrow();
+person.greet(); 
+const greetFn = person.greet;
+greetFn(); 
+const anotherPerson = {
+    firstName: 'Аня',
+    lastName: 'Петрова'
+};
+person.greet.call(undefined);
+person.greet.apply(null);
+const notReallyBoundGreet = person.greet.bind(anotherPerson);
+const boundFn = function () { console.log(`Bound this: ${this.firstName}`); }.bind(anotherPerson);
